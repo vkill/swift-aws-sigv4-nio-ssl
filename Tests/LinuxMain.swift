@@ -1,7 +1,7 @@
 import XCTest
 
-import AwsSigv4CNIOSSLTests
+import AwsSigv4NIOSSLCryptoTests
 
 var tests = [XCTestCaseEntry]()
-tests += AwsSigv4CNIOSSLTests.allTests()
+tests += AwsSigv4NIOSSLCryptoTests.allTests()
 XCTMain(tests)

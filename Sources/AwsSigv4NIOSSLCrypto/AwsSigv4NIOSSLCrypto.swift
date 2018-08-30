@@ -1,7 +1,7 @@
 import AwsSigv4
 import struct Foundation.Data
 
-public struct AwsSigv4CNIOSSL: AwsSigv4Crypto {
+public struct AwsSigv4NIOSSLCrypto: AwsSigv4Crypto {
     public init() {
     }
 

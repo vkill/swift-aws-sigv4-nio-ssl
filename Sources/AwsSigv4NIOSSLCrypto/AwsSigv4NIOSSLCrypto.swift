@@ -10,8 +10,6 @@ public struct AwsSigv4NIOSSLCrypto: AwsSigv4Crypto {
     }
 
     public func hmacSHA256Digest(_ key: Data, _ value: Data) throws -> Data {
-        let key = [UInt8](key)
-
-        return Data(bytes: hmac(string: String(decoding: value, as: UTF8.self), key: key))
+        return Data(bytes: hmac(string: String(decoding: value, as: UTF8.self), key: [UInt8](key)))
     }
 }

@@ -6,21 +6,21 @@
 //
 //
 
-import Foundation
+import struct Foundation.Data
 import CNIOOpenSSL
 
-public func sha256(_ string: String) -> [UInt8] {
+func sha256(_ string: String) -> [UInt8] {
     var bytes = Array(string.utf8)
     return sha256(&bytes)
 }
 
-public func sha256(_ bytes: inout [UInt8]) -> [UInt8] {
+func sha256(_ bytes: inout [UInt8]) -> [UInt8] {
     var hash = [UInt8](repeating: 0, count: Int(SHA256_DIGEST_LENGTH))
     SHA256(&bytes, bytes.count, &hash)
     return hash
 }
 
-public func sha256(_ data: Data) -> [UInt8] {
+func sha256(_ data: Data) -> [UInt8] {
     return data.withUnsafeBytes {(bytes: UnsafePointer<UInt8>) in
         var hash = [UInt8](repeating: 0, count: Int(SHA256_DIGEST_LENGTH))
         SHA256(bytes, data.count, &hash)
@@ -28,7 +28,7 @@ public func sha256(_ data: Data) -> [UInt8] {
     }
 }
 
-public func md5(_ data: Data) -> [UInt8] {
+func md5(_ data: Data) -> [UInt8] {
     return data.withUnsafeBytes {(bytes: UnsafePointer<UInt8>) in
         var hash = [UInt8](repeating: 0, count: Int(MD5_DIGEST_LENGTH))
         MD5(bytes, data.count, &hash)

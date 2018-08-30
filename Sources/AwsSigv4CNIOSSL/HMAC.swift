@@ -6,7 +6,6 @@
 //
 //
 
-import Foundation
 import CNIOOpenSSL
 
 func hmac(string: String, key: [UInt8]) -> [UInt8] {

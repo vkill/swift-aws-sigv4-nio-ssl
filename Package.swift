@@ -1,4 +1,4 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.0
 
 import PackageDescription
 
@@ -8,11 +8,11 @@ let package = Package(
         .library(name: "AwsSigv4NIOSSLCrypto", targets: ["AwsSigv4NIOSSLCrypto"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/vkill/swift-aws-sigv4.git", .exact("0.1.0")),
-        .package(url: "https://github.com/apple/swift-nio-ssl.git", from: "1.1.0"),
+        .package(url: "https://github.com/vkill/swift-aws-sigv4.git", from: "0.2.0"),
+        .package(url: "https://github.com/apple/swift-nio-ssl.git", from: "2.0.0"),
     ],
     targets: [
-        .target(name: "AwsSigv4NIOSSLCrypto", dependencies: ["AwsSigv4", "NIOOpenSSL"]),
+        .target(name: "AwsSigv4NIOSSLCrypto", dependencies: ["AwsSigv4", "NIOSSL"]),
         .testTarget(name: "AwsSigv4NIOSSLCryptoTests", dependencies: ["AwsSigv4NIOSSLCrypto"]),
     ]
 )

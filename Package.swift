@@ -8,7 +8,7 @@ let package = Package(
         .library(name: "AwsSigv4NIOSSLCrypto", targets: ["AwsSigv4NIOSSLCrypto"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/vkill/swift-aws-sigv4.git", .branch("master")),
+        .package(url: "https://github.com/vkill/swift-aws-sigv4.git", .exact("0.1.0")),
         .package(url: "https://github.com/apple/swift-nio-ssl.git", from: "1.1.0"),
     ],
     targets: [
